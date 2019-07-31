@@ -1,10 +1,32 @@
 # TWEETS ANALYZER
 
+Analyze tweets to extract those that deal with a particular theme
+
+## INSTALLATION
+
+Vérifier que la commande pip et que le package python git (commande : pip install git) sont installés.
+
+#### Pour installer le package french_preprocessing, executer la commande (dans anaconda prompt par exemple) :
+#### pip install git+https://github.com/anaishoareau/tweets_analyzer.git
+
+#### ATTENTION : Cette commande installe aussi les dépendances (les packages python tweepy, pandas, unidecode). Si vous rencontrez des problèmes, il faut les installer à part.
+
+Les versions utilisées sont :
+
+tweepy : 3.8.0
+
+pandas : 0.24.2
+
+unidecode : 1.1.1
+
+#### IL FAUT INSTALLER LE PACKAGE FRENCH_PREPROCESSING POUR QUE TWEETS_ANALYZER FONCTIONNE.
+
+Les informations relatives à l'installation de french_preprocessing sont explicitées dans 
+README du repository GitHub du package : https://github.com/anaishoareau/french_preprocessing
 
 ## OBJECTIF DU PACKAGE
 
-Réaliser une analyse d'un gros volume de tweets pour extraire ceux
-abordant un thème particulier.
+Réaliser une analyse de tweets pour extraire ceux abordant un thème particulier.
 
 ####  Exemple de cas d'usage :
 
