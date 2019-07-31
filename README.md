@@ -90,13 +90,13 @@ adjectifs pluriels, féminins, féminins pluriels, verbes conjugués...
 
 Les tags autorisés sont : 'v', 'nc', 'adj', 'c', 'npp', 'adv', 'det', 'pro', 'prep', 'i', 'ponct', 'cl', 'et'
 
-(Il est possibles d'utilser les fonctions conjug_1 et conjug_2 du module general_tools pour obtenir
+(Il est possible d'utilser les fonctions conjug_1 et conjug_2 du module general_tools pour obtenir
 la liste de toutes les formes conjuguées d'un verbe régulier du 1er ou du 2ème groupe.)
 
 ##### Exemple de la forme du fichier database_alert_words.txt :
 
 {'problèmes' : {'nc' : 'problème'}, 'problème' : {'nc' : 'problème'},
-'ordinateurs' : {'nc' : 'ordinateur'}, 'problème' : {'nc' : 'ordinateur'}
+'ordinateurs' : {'nc' : 'ordinateur'}, 'problème' : {'nc' : 'ordinateur'},
 'connecté' : {'v' : 'connecter', 'adj' : 'connecté'}}
 
 - alert_lemma.txt
@@ -118,7 +118,7 @@ from tweets_analyzer.alert_data_tools import AlertDataTools
 
 #### Création ou ouverture des fichiers
 
-adt = AlertDataTools(alert_lemma_file_name,alert_lemma_dir_path,database_alert_words_file_name,database_alert_words_dir_path)
+adt=AlertDataTools(alert_lemma_file_name,alert_lemma_dir_path,database_alert_words_file_name,database_alert_words_dir_path)
 
 #### Méthodes 
 
