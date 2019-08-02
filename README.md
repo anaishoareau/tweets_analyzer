@@ -2,7 +2,7 @@
 
 Analyze tweets to extract those that deal with a particular theme
 
-## INSTALLATION
+## Installation
 
 Vérifier que la commande pip et que le package python git (commande : pip install git) sont installés.
 
@@ -24,7 +24,7 @@ unidecode : 1.1.1
 Les informations relatives à l'installation de french_preprocessing sont explicitées dans 
 README du repository GitHub du package : https://github.com/anaishoareau/french_preprocessing
 
-## OBJECTIF DU PACKAGE
+## Objectif du package
 
 Réaliser une analyse de tweets pour extraire ceux abordant un thème particulier.
 
@@ -41,7 +41,7 @@ Et faire une étude sur les tweets dont les textes contiennent
 au moins un mot de chaque catégorie.
 
 
-## PHASES POUR LA REALISATION DE L'ANALYSE
+## Phases pour la réalisation de l'analyse
 
 #### Phase préparatoire (Facultatif) :
 
@@ -74,8 +74,7 @@ Exemple mot -> lemme :
 - "pimentées" -> "pimenté"
 - "consonne" -> "consonne"
 
-
-## CREATION DES DICTIONNAIRES RELATIFS AUX MOTS D'ALERTE (Propre au cas d'usage choisi)
+## Création des dictionnaires relatifs aux mots d'alerte (Propre au cas d'usage choisi)
 
 ### Format des fichiers à créer : 
 
@@ -91,7 +90,7 @@ adjectifs pluriels, féminins, féminins pluriels, verbes conjugués...
 Les tags autorisés sont : 'v', 'nc', 'adj', 'c', 'npp', 'adv', 'det', 'pro', 'prep', 'i', 'ponct', 'cl', 'et'
 
 (Il est possible d'utilser les fonctions conjug_1 et conjug_2 du module general_tools pour obtenir
-la liste de toutes les formes conjuguées d'un verbe régulier du 1er ou du 2ème groupe.)
+la liste de toutes les formes conjuguées d'un verbe régulier du 1er ou du 2ème groupe)
 
 ##### Exemple de la forme du fichier database_alert_words.txt :
 
@@ -146,7 +145,7 @@ Supprime le lemme "lemma" de alert_lemma
 Si tag = tag1 : Supprime le tag "tag1" de database_alert_word ({word : {tag1 : lemma1, tag2 : lemma2}} -> {word : {tag2 : lemma2}})
 Si tag = 'all' : Supprime le mot "word" de database_alert_word ({word : {tag1 : lemma1, tag2 : lemma2}} -> {})
 
-## DETAIL DES COLONNES DU CSV D'ANALYSE
+## Détail des colonnes du fichier CSV d'analyse
 
 - "id" : Identifiant Twitter du tweet
 - "date" : Date et heure de création du tweet (UTC+0)
@@ -168,7 +167,7 @@ id et pseudo d'une personne séparés par ":", les différentes personnes sépar
 - "nb_alert_lemma_2" : Nombre de mots d'alerte de catégorie 2 dans le texte du tweet
 
 
-## EXEMPLE D'UTILISATION DE LA METHODE D'ANALYSE
+## Exemple d'utilisation de la méthode d'analyse
 
 #### IMPORTS
 
