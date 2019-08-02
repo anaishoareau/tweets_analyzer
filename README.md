@@ -56,7 +56,7 @@ et preprocessing à l'aide du module french_preprocessing à installer préalabl
 https://github.com/anaishoareau/french_preprocessing
 
 Le preprocessing à l'aide du package french_preprocessing regroupe les étapes suivantes :
-- Tokenisation et simplification (suppression des stopwords, des symboles innutiles...)
+- Tokenisation et simplification (suppression des stopwords, des symboles inutiles...)
 - Tagging (Avec le StanfordPOSTagger et réduction des tags)
 - Lemmatisation
 
@@ -83,7 +83,7 @@ Exemple mot -> lemme :
 Ce ficher texte doit être construit comme un dictionnaire de dictionnaire. 
 Pour en remplir un, il est possible d'utiliser les méthodes de la classe AlertDataTools du module alert_data_tools.
 
-Les mots du fichier database_alert_word.txt doivent être écrit avec leurs accents, 
+Les mots du fichier database_alert_word.txt doivent être écrits avec leurs accents, 
 dans toutes les formes nécessaires : noms pluriels, féminins, féminins pluriels, 
 adjectifs pluriels, féminins, féminins pluriels, verbes conjugués...
 
@@ -124,16 +124,19 @@ adt=AlertDataTools(alert_lemma_file_name,alert_lemma_dir_path,database_alert_wor
 - adt.in_database_alert_words(word)
 
 Renvoie False, si le mot "word" ne se trouve pas dans database_alert_words
+
 Renvoie le dictionnaire associé à "word" : {tag1 : lemma1, tag2 : lemma2}, si le mot "word" se trouve dans database_alert_words
 
 - adt.in_alert_lemma(word)
 
 Renvoie False, si le lemme "lemma" ne se trouve pas dans alert_lemma
+
 Renvoie la catégorie associée à lemma : 1 ou 2, si le lemme "lemma" se trouve dans alert_lemma
 
 - adt.add_element(word, lemma, tag, category)
 
 Ne renvoie rien
+
 Ajoute l'élément dans dans database_alert_word ( {word : {tag:lemma}} ) et dans alert lemma ( {lemma : category} )
 
 - adt.remove_lemma_in_alert_lemma(lemma)
@@ -143,6 +146,7 @@ Supprime le lemme "lemma" de alert_lemma
 - adt.remove_word_in_database_alert_words(word, tag = 'all')
 
 Si tag = tag1 : Supprime le tag "tag1" de database_alert_word ({word : {tag1 : lemma1, tag2 : lemma2}} -> {word : {tag2 : lemma2}})
+
 Si tag = 'all' : Supprime le mot "word" de database_alert_word ({word : {tag1 : lemma1, tag2 : lemma2}} -> {})
 
 ## Détail des colonnes du fichier CSV d'analyse
