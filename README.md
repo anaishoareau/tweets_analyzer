@@ -109,17 +109,15 @@ Ce fichier permet de connaître la catégorie du lemme que l'on va tracker.
 
 {'problème' : 1, 'ordinateur' : 2, 'connecter' : 2, 'connecté' : 2}
 
-### Outils pour la création de database_alert_word.txt et alert_lemma.txt
+### Outils pour la création de database_alert_word.txt et alert_lemma.txt :
 
-#### Import
+#### Import et instanciation
 
 from tweets_analyzer.alert_data_tools import AlertDataTools
 
-#### Création ou ouverture des fichiers
-
 adt=AlertDataTools(alert_lemma_file_name,alert_lemma_dir_path,database_alert_words_file_name,database_alert_words_dir_path)
 
-#### Méthodes 
+#### Détail des méthodes 
 
 - adt.in_database_alert_words(word)
 
