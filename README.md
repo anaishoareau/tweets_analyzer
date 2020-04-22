@@ -1,6 +1,6 @@
 # TWEETS ANALYZER
 
-Analyze tweets to extract those that deal with a particular theme
+Analyse de tweets pour extraire ceux qui traitent d'un thème particulier.
 
 ## Installation
 
@@ -97,9 +97,9 @@ la liste de toutes les formes conjuguées d'un verbe régulier du 1er ou du 2èm
 ##### Exemple de la forme du fichier database_alert_words.txt :
 
 ```bash 
-{'problèmes' : {'nc' : 'problème'}, 'problème' : {'nc' : 'problème'},
+{[...]'problèmes' : {'nc' : 'problème'}, 'problème' : {'nc' : 'problème'},
 'ordinateurs' : {'nc' : 'ordinateur'}, 'problème' : {'nc' : 'ordinateur'},
-'connecté' : {'v' : 'connecter', 'adj' : 'connecté'}}
+'connecté' : {'v' : 'connecter', 'adj' : 'connecté'}[...]}
 ```
 
 - alert_lemma.txt
@@ -112,7 +112,7 @@ Ce fichier permet de connaître la catégorie du lemme que l'on va tracker.
 ##### Exemple de la forme du fichier alert_lemma.txt : 
 
 ```bash 
-{'problème' : 1, 'ordinateur' : 2, 'connecter' : 2, 'connecté' : 2}
+{[...]'problème' : 1, 'ordinateur' : 2, 'connecter' : 2, 'connecté' : 2[...]}
 ```
 
 ### Outils pour la création de database_alert_word.txt et alert_lemma.txt :
@@ -221,7 +221,7 @@ tweets_analyzer.analyze(json_file_name_to_analyze,
 #### OUVERTURE ET LECTURE DU FICHIER CSV D'ANALYSE 
 
 ```python
-dataset = pd.read_csv(csv_analyzed_dir_path + csv_analyzed_name, encoding = 'latin-1')
+dataset = pd.read_csv(csv_analyzed_dir_path + csv_analyzed_name, encoding = 'utf-8')
 
 print(dataset.head())
 ```
