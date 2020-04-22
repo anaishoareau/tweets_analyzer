@@ -4,11 +4,13 @@ Analyze tweets to extract those that deal with a particular theme
 
 ## Installation
 
-Vérifier que la commande pip et que le package python git (commande : pip install git) sont installés.
+Vérifier que la commande pip est installée, ainsi que git : https://packaging.python.org/tutorials/installing-packages/
 
-#### Pour installer le package french_preprocessing, executer la commande (dans anaconda prompt par exemple) :
-#### pip install git+https://github.com/anaishoareau/tweets_analyzer.git
+#### Pour installer le package french_preprocessing, executer la commande :
 
+```bash 
+pip install git+https://github.com/anaishoareau/tweets_analyzer.git
+```
 #### ATTENTION : Cette commande installe aussi les dépendances (les packages python tweepy, pandas, unidecode). Si vous rencontrez des problèmes, il faut les installer à part.
 
 Les versions utilisées sont :
@@ -22,7 +24,7 @@ unidecode : 1.1.1
 #### IL FAUT INSTALLER LE PACKAGE FRENCH_PREPROCESSING POUR QUE TWEETS_ANALYZER FONCTIONNE.
 
 Les informations relatives à l'installation de french_preprocessing sont explicitées dans 
-README du repository GitHub du package : https://github.com/anaishoareau/french_preprocessing
+README du repository GitHub suivant : https://github.com/anaishoareau/french_preprocessing.
 
 ## Objectif du package
 
@@ -94,9 +96,11 @@ la liste de toutes les formes conjuguées d'un verbe régulier du 1er ou du 2èm
 
 ##### Exemple de la forme du fichier database_alert_words.txt :
 
+```bash 
 {'problèmes' : {'nc' : 'problème'}, 'problème' : {'nc' : 'problème'},
 'ordinateurs' : {'nc' : 'ordinateur'}, 'problème' : {'nc' : 'ordinateur'},
 'connecté' : {'v' : 'connecter', 'adj' : 'connecté'}}
+```
 
 - alert_lemma.txt
 
@@ -107,16 +111,19 @@ Ce fichier permet de connaître la catégorie du lemme que l'on va tracker.
 
 ##### Exemple de la forme du fichier alert_lemma.txt : 
 
+```bash 
 {'problème' : 1, 'ordinateur' : 2, 'connecter' : 2, 'connecté' : 2}
+```
 
 ### Outils pour la création de database_alert_word.txt et alert_lemma.txt :
 
 #### Import et instanciation
 
+```python
 from tweets_analyzer.alert_data_tools import AlertDataTools
 
-adt=AlertDataTools(alert_lemma_file_name,alert_lemma_dir_path,database_alert_words_file_name,database_alert_words_dir_path)
-
+adt = AlertDataTools(alert_lemma_file_name, alert_lemma_dir_path, database_alert_words_file_name, database_alert_words_dir_path)
+```
 #### Détail des méthodes 
 
 - adt.in_database_alert_words(word)
@@ -173,12 +180,15 @@ id et pseudo d'une personne séparés par ":", les différentes personnes sépar
 
 #### IMPORTS
 
+```python
 import pandas as pd
 
 from tweets_analyzer.tweets_analyzer import TweetsAnalyzer
+```
 
 #### DEFINITION DES CONSTANTES (Informations à modifier)
 
+```python
 alert_lemma_file_name, alert_lemma_dir_path = 'alert_lemma.txt', 'C:\chemin\exemple\alert_data'
 
 database_alert_words_file_name, database_alert_words_dir_path = 'database_alert_words.txt', 'C:\chemin\exemple\alert_data'
@@ -188,12 +198,14 @@ json_file_name_to_analyze, json_file_to_analyze_dir_path = '2019-07-26_tweets.js
 csv_analyzed_name, csv_analyzed_dir_path = 'analyzed_2019-07-26_tweets.csv', 'C:\chemin\exemple\analyzed_data'
 
 lexique_update = False
+```
 
 (lexique_update = True signifie que l'on met à jour les mots du lexique avec database_alert_words, 
 on ajoute les élements manquants pour que la lemmatisation soit plus performante pour notre cas)
 
 #### LANCEMENT DE L'ANALYSE
 
+```python
 tweets_analyzer = TweetsAnalyzer(alert_lemma_file_name,
                                  alert_lemma_dir_path,
                                  database_alert_words_file_name,
@@ -204,9 +216,12 @@ tweets_analyzer.analyze(json_file_name_to_analyze,
                         json_file_to_analyze_dir_path,
                         csv_analyzed_name,
                         csv_analyzed_dir_path)
+```
 
 #### OUVERTURE ET LECTURE DU FICHIER CSV D'ANALYSE 
 
+```python
 dataset = pd.read_csv(csv_analyzed_dir_path + csv_analyzed_name, encoding = 'latin-1')
 
 print(dataset.head())
+```
